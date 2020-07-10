@@ -1,0 +1,64 @@
+
+
+<div class="content" role="main">
+  <p>Hi {{name}}!!!   Here are some links to help you get started:</p>
+
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Home</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>View User History</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Cab Delay</span>
+    </div>
+
+  </div>
+
+  <!-- Terminal -->
+  <div class="shadowbox" [ngSwitch]="selection.value">
+    <pre *ngSwitchDefault>Interface to enter task detail</pre>
+    <pre *ngSwitchCase="'material'">
+     
+      <form action="#" method="post" target="_blank">
+        <!--  -->
+        <table style="width:100%;height:fit-content">
+          <tr>
+            <td></td>
+            <td > <b>View User History</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>User ID</th>
+            <th></th>
+            <th>Prod Date</th>
+            
+          </tr>
+          <tr>
+            <td><input type="text" name="userID" /></td>
+            <td></td>
+            <td><input type="date" name="prodDate"/></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="submit"/></td>
+            <td><input type="reset" value="reset"/></td>
+          </tr>
+        </table>
+      </form>
+      <app-pie-chart></app-pie-chart>
+    </pre>
+   
+</div>
+</div>
